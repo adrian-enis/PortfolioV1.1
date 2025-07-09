@@ -14,7 +14,7 @@ particlesJS('particles-js', {
       "type": "circle", // Mantener círculo, la deformación vendrá de tamaño/opacidad aleatoria
     },
     "opacity": {
-      "value": 0.4, // Ligeramente más opaco
+      "value": 0.8, // Ligeramente más opaco
       "random": true,
       "anim": {
         "enable": false,

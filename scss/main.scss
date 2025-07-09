@@ -11,6 +11,49 @@ body {
     margin: 0;
     padding: 0;
     position: relative; // Necesario para el z-index de las partículas
+    overflow: hidden; // Para evitar barras de desplazamiento si los blobs se salen
+    transition: background-color 0.5s ease, color 0.5s ease;
+
+    &.dark-mode {
+        background-color: $dark-primary-color;
+        color: $dark-text-color;
+
+        header {
+            background-color: rgba(34, 34, 34, 0.9);
+            nav {
+                a {
+                    color: $dark-text-color;
+                    &:hover {
+                        color: $dark-accent-color;
+                    }
+                }
+            }
+        }
+
+        .social-links a {
+            color: $dark-accent-color;
+        }
+
+        .carousel-button {
+            border-color: $dark-text-color;
+            color: $dark-text-color;
+
+            &:hover {
+                background-color: $dark-text-color;
+                color: $dark-primary-color;
+            }
+        }
+
+        .carousel-dot {
+            &.active {
+                background-color: $dark-accent-color;
+            }
+
+            &:hover {
+                background-color: #777;
+            }
+        }
+    }
 }
 
 #particles-js {
@@ -20,6 +63,98 @@ body {
     top: 0;
     left: 0;
     z-index: -1; // Asegura que esté en el fondo
+}
+
+#blob-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -2; // Detrás de las partículas
+
+    .blob {
+        position: absolute;
+        opacity: 0.15; // Sutil
+        animation: rotate 30s linear infinite; // Animación de rotación
+
+        // Posicionamiento y tamaño aleatorio para cada blob
+        &.blob-1 {
+            width: 400px;
+            height: 400px;
+            top: 10%;
+            left: 5%;
+            animation-duration: 35s;
+        }
+        &.blob-2 {
+            width: 450px;
+            height: 450px;
+            bottom: 15%;
+            right: 10%;
+            animation-duration: 40s;
+        }
+        &.blob-3 {
+            width: 350px;
+            height: 350px;
+            top: 5%;
+            right: 20%;
+            animation-duration: 30s;
+        }
+        &.blob-4 {
+            width: 420px;
+            height: 420px;
+            bottom: 5%;
+            left: 20%;
+            animation-duration: 45s;
+        }
+        &.blob-5 {
+            width: 380px;
+            height: 380px;
+            top: 40%;
+            left: 40%;
+            animation-duration: 32s;
+        }
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; // Por encima de todo
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    .icon-moon {
+        width: 30px; // Tamaño del icono
+        height: 30px;
+        fill: $text-color; // Color por defecto (negro en modo claro)
+        transition: fill 0.3s ease;
+    }
+}
+
+body.dark-mode {
+    .dark-mode-toggle {
+        .icon-moon {
+            fill: $dark-text-color; // Blanco en modo oscuro
+        }
+    }
 }
 
 header {

@@ -121,6 +121,38 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
+  overflow: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+body.dark-mode {
+  background-color: #222;
+  color: #f4f4f9;
+}
+body.dark-mode header {
+  background-color: rgba(34, 34, 34, 0.9);
+}
+body.dark-mode header nav a {
+  color: #f4f4f9;
+}
+body.dark-mode header nav a:hover {
+  color: #66b2ff;
+}
+body.dark-mode .social-links a {
+  color: #66b2ff;
+}
+body.dark-mode .carousel-button {
+  border-color: #f4f4f9;
+  color: #f4f4f9;
+}
+body.dark-mode .carousel-button:hover {
+  background-color: #f4f4f9;
+  color: #222;
+}
+body.dark-mode .carousel-dot.active {
+  background-color: #66b2ff;
+}
+body.dark-mode .carousel-dot:hover {
+  background-color: #777;
 }
 
 #particles-js {
@@ -130,6 +162,88 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
+}
+
+#blob-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -2;
+}
+#blob-container .blob {
+  position: absolute;
+  opacity: 0.15;
+  animation: rotate 30s linear infinite;
+}
+#blob-container .blob.blob-1 {
+  width: 400px;
+  height: 400px;
+  top: 10%;
+  left: 5%;
+  animation-duration: 35s;
+}
+#blob-container .blob.blob-2 {
+  width: 450px;
+  height: 450px;
+  bottom: 15%;
+  right: 10%;
+  animation-duration: 40s;
+}
+#blob-container .blob.blob-3 {
+  width: 350px;
+  height: 350px;
+  top: 5%;
+  right: 20%;
+  animation-duration: 30s;
+}
+#blob-container .blob.blob-4 {
+  width: 420px;
+  height: 420px;
+  bottom: 5%;
+  left: 20%;
+  animation-duration: 45s;
+}
+#blob-container .blob.blob-5 {
+  width: 380px;
+  height: 380px;
+  top: 40%;
+  left: 40%;
+  animation-duration: 32s;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+}
+.dark-mode-toggle .icon-moon {
+  width: 30px;
+  height: 30px;
+  fill: #333;
+  transition: fill 0.3s ease;
+}
+
+body.dark-mode .dark-mode-toggle .icon-moon {
+  fill: #f4f4f9;
 }
 
 header {
