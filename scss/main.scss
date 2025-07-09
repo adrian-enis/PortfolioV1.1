@@ -1,0 +1,68 @@
+
+@import 'variables';
+@import 'home';
+@import 'about';
+@import 'work';
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: $primary-color;
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+    position: relative; // Necesario para el z-index de las partículas
+}
+
+#particles-js {
+    position: fixed; // Cambiado a fixed para que ocupe todo el viewport
+    width: 100vw; // 100% del ancho del viewport
+    height: 100vh; // 100% del alto del viewport
+    top: 0;
+    left: 0;
+    z-index: -1; // Asegura que esté en el fondo
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+    
+    nav {
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+
+            li {
+                margin: 0 1.5rem;
+
+                a {
+                    text-decoration: none;
+                    color: $text-color;
+                    font-weight: 400;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: $accent-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+    padding-top: 60px; // Ajustar según la altura del header
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}

@@ -1,0 +1,174 @@
+#home .home-content h1 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+#home .home-content h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-top: 0;
+}
+#home .home-content .social-links {
+  margin-top: 2rem;
+}
+#home .home-content .social-links a {
+  margin: 0 1rem;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: opacity 0.3s ease;
+}
+#home .home-content .social-links a:hover {
+  opacity: 0.7;
+}
+
+#about .about-content {
+  max-width: 800px;
+}
+#about .about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+#about .about-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+#work .work-content {
+  width: 100%;
+}
+#work .work-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+#work .work-content .carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+#work .work-content .carousel {
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+}
+#work .work-content .carousel-slide {
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+#work .work-content .carousel-slide.is-transitioning {
+  opacity: 0;
+}
+#work .work-content .carousel-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+#work .work-content .carousel-slide h3 {
+  margin-top: 1rem;
+  font-weight: 400;
+}
+#work .work-content .carousel-slide a {
+  text-decoration: none;
+  color: inherit;
+}
+#work .work-content .carousel-button {
+  background-color: transparent;
+  border: 2px solid #333;
+  color: #333;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 1rem;
+}
+#work .work-content .carousel-button:hover {
+  background-color: #333;
+  color: #f4f4f9;
+}
+#work .work-content .carousel-dots {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+#work .work-content .carousel-dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  border: none;
+  padding: 0;
+}
+#work .work-content .carousel-dot.active {
+  background-color: #007bff;
+}
+#work .work-content .carousel-dot:hover {
+  background-color: #717171;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+}
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+header nav ul li {
+  margin: 0 1.5rem;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+header nav ul li a:hover {
+  color: #007bff;
+}
+
+main {
+  padding-top: 60px;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+/*# sourceMappingURL=main.css.map */

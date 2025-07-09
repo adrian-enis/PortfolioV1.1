@@ -1,0 +1,31 @@
+
+#home {
+    .home-content {
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-top: 0;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+
+            a {
+                margin: 0 1rem;
+                color: $accent-color;
+                text-decoration: none;
+                font-size: 1.2rem;
+                transition: opacity 0.3s ease;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}
