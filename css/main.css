@@ -63,7 +63,8 @@
 }
 #work .work-content .carousel-slide img {
   width: 100%;
-  height: auto;
+  height: 400px;
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -141,8 +142,9 @@ body.dark-mode .social-links a {
   color: #66b2ff;
 }
 body.dark-mode .carousel-button {
-  border-color: #f4f4f9;
-  color: #f4f4f9;
+  border-color: #f0f0f0;
+  background-color: #f0f0f0;
+  color: #121212;
 }
 body.dark-mode .carousel-button:hover {
   background-color: #f4f4f9;
