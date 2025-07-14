@@ -16,6 +16,10 @@
 */
 
 /* === 1. GENERAL & ROOT STYLES === */
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f4f4f9;
@@ -72,10 +76,10 @@ header {
 header nav ul {
   list-style: none;
   margin: 0;
-  padding: 1rem 0;
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 3rem; /* Mobile gap */
 }
 
 header nav a {
@@ -83,6 +87,7 @@ header nav a {
   color: #333;
   font-weight: 700;
   transition: color 0.3s ease;
+  font-size: 1.6rem;
 }
 
 header nav a:hover {
@@ -91,17 +96,17 @@ header nav a:hover {
 
 .dark-mode-toggle {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  bottom: 1.6%;
+  right: 5%;
   background: none;
   border: none;
   cursor: pointer;
   z-index: 1001;
-  transition: transform 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .dark-mode-toggle:hover {
-  transform: scale(1.1);
+  opacity: 0.7;
 }
 
 .dark-mode-toggle .icon-moon {
@@ -115,11 +120,12 @@ header nav a:hover {
 main {
   padding-top: 60px; /* Adjust for fixed header */
   height: calc(100vh - 60px);
+
   overflow-y: auto; /* Allow scrolling within main content */
 }
 
 section {
-  min-height: 100vh;
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -131,62 +137,98 @@ section {
 }
 
 /* === 5. SECTION: HOME === */
+#home {
+  justify-content: flex-start;
+  margin-top: 12rem;
+}
+
+#home .home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-bottom: 30rem; */
+}
 #home .home-content h1 {
-  font-size: 4rem;
+  font-size: 4.8rem; /* Mobile font size */
   margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 #home .home-content h2 {
-  font-size: 2rem;
+  font-size: 2.6rem; /* Mobile font size */
   font-weight: 300;
   margin-top: 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 #home .social-links {
-  margin-top: 2rem;
+  margin-top: 1rem;
+  display: flex;
+  gap: 2rem;
+  font-size: 1.6rem;
 }
 
-#home .social-links a {
-  margin: 0 1rem;
-  color: #007bff;
+.social-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: opacity 0.3s ease;
+  font-weight: 700;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-#home .social-links a:hover {
-  opacity: 0.7;
+.social-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
+
+.social-button.linkedin {
+  background-color: #0077B5;
+}
+
+.social-button.github {
+  background-color: #181717;
+}
+
 
 /* === 6. SECTION: ABOUT === */
 #about .about-content {
   max-width: 800px;
+  padding: 0 1rem; /* Mobile padding */
 }
 
 #about .about-content h2 {
-  font-size: 2.5rem;
+  font-size: 3.6rem; /* Mobile font size */
   margin-bottom: 2rem;
 }
 
 #about .about-content p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.4rem; /* Mobile font size */
+  line-height: 1.8;
+  
+  text-align: left; /* Mobile text align */
 }
 
 /* === 7. SECTION: WORK === */
+#work {
+  justify-content: flex-start;
+  padding-top: 80px;
+}
+
 #work .work-content {
   width: 100%;
   max-width: 900px;
 }
 
 #work h2 {
-  font-size: 2.5rem;
+  font-size: 3.6rem;
   margin-bottom: 2rem;
 }
 
 /* Carousel Styles (Desktop) */
 .carousel-wrapper {
-  display: flex;
+  display: none; /* Hidden on mobile */
   align-items: center;
   justify-content: center;
   position: relative;
@@ -270,7 +312,33 @@ section {
 
 /* Project List Styles (Mobile/Tablet) */
 .project-list {
-  display: none; /* Hidden by default */
+  display: flex; /* Show project list instead */
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.project-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+.project-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.project-card h3 {
+  margin-top: 1rem;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* === 8. DARK MODE STYLES === */
@@ -296,8 +364,14 @@ body.dark-mode .dark-mode-toggle .icon-moon {
   fill: #f0f0f0;
 }
 
-body.dark-mode .social-links a {
-  color: #66b2ff;
+body.dark-mode #home .home-content h1,
+body.dark-mode #home .home-content h2 {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .social-button.github {
+  background-color: #f0f0f0;
+  color: #181717;
 }
 
 body.dark-mode .carousel-button {
@@ -323,83 +397,28 @@ body.dark-mode .project-card {
 
 /* === 10. RESPONSIVE STYLES (MEDIA QUERIES) === */
 
-/* Tablets and Mobile */
-@media (max-width: 1024px) {
-  #work {
-    justify-content: flex-start;
-    padding-top: 80px;
-  }
+/* Tablets and up */
+@media (min-width: 769px) {
 
-  .carousel-wrapper {
-    display: none; /* Hide carousel on smaller screens */
-  }
-
-  .project-list {
-    display: flex; /* Show project list instead */
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-    padding: 0 1rem;
-  }
-
-  .project-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.05);
+  #about .about-content p {
+    font-size: 1.6;
     text-align: center;
-  }
-
-  .project-card img {
-    max-width: 100%;
-    border-radius: 8px;
-  }
-
-  .project-card h3 {
-    margin-top: 1rem;
-  }
-
-  .project-card a {
-    text-decoration: none;
-    color: inherit;
   }
 }
 
-/* Mobile Only */
-@media (max-width: 768px) {
-  header nav ul {
-    gap: 1rem;
+/* Desktop and up */
+@media (min-width: 1025px) {
+
+  #work {
+    justify-content: center;
+    padding-top: 60px;
   }
 
-  .dark-mode-toggle {
-    top: auto;
-    bottom: 20px;
-    right: 20px;
+  .carousel-wrapper {
+    display: flex; /* Show carousel on larger screens */
   }
 
-  #home {
-    justify-content: flex-start;
-    padding-top: 100px;
-  }
-
-  #home .home-content h1 {
-    font-size: 2.8rem;
-  }
-
-  #home .home-content h2 {
-    font-size: 1.6rem;
-  }
-
-  #about .about-content {
-    padding: 0 1rem;
-  }
-
-  #about .about-content h2 {
-    font-size: 2rem;
-  }
-
-  #about .about-content p {
-    font-size: 1rem;
-    text-align: left;
+  .project-list {
+    display: none; /* Hide project list */
   }
 }
